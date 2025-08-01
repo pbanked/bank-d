@@ -12,12 +12,12 @@ export default function Home() {
           <IconTools size={48} stroke={1.5} className="text-blue-600" />
         </div>
         <Title order={2} className="text-black text-2xl font-bold mb-2">
-          We're Under Construction
+          We&apos;re Under Construction
         </Title>
         <Text className="text-gray-600 mb-4">
           Our website is currently undergoing scheduled updates.
           <br />
-          We'll be back shortly. Thank you for your patience!
+          We&apos;ll be back shortly. Thank you for your patience!
         </Text>
         <div className="mb-4">
           <Image
