@@ -1,14 +1,12 @@
 "use client";
 
 import { GoogleButton } from "@/components/google-button";
+import { userLogin } from "@/functions/user-login";
 import {
   Anchor,
   Button,
-  Checkbox,
-  Divider,
   Group,
   Paper,
-  PaperProps,
   PasswordInput,
   Stack,
   Text,
@@ -17,8 +15,12 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useRouter } from "next/navigation";
+import { notifications } from "@mantine/notifications";
+import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
 
-export default function Page(props: PaperProps) {
+export default function Page() {
+  const router = useRouter();
   const form = useForm({
     initialValues: { email: "", password: "", terms: true },
     validate: {
@@ -27,24 +29,26 @@ export default function Page(props: PaperProps) {
         v.length <= 6 ? "Password should include at least 6 characters" : null,
     },
   });
-  const router = useRouter();
+
+  const login = async (values: { email: string; password: string }) => {
+    const error = await userLogin(values.email, values.password, router);
+    if (error) {
+      notifications.show({
+        title: "Login Failed",
+        message: error,
+        color: "red",
+      });
+    }
+  };
   return (
     <Center mih="100vh">
-      <Paper maw={560} w="100%" radius="md" p="lg" withBorder {...props}>
-        <Text size="lg" fw={500}>
-          Welcome to Bankd,
+      <Paper maw={560} w="100%" radius="md" p="5vw" withBorder>
+        <Text size="50px" fw={500}>
+          Log in
         </Text>
-        <Group grow mb="md" mt="md">
-          <GoogleButton radius="xl">Google</GoogleButton>
-        </Group>
-        <Divider
-          label="Or continue with email"
-          labelPosition="center"
-          my="lg"
-        />
 
-        <form onSubmit={form.onSubmit(() => {})}>
-          <Stack>
+        <form onSubmit={form.onSubmit(login)}>
+          <Stack className="mt-10">
             <TextInput
               required
               label="Email"
@@ -71,6 +75,10 @@ export default function Page(props: PaperProps) {
               }
               radius="md"
             />
+            <Button type="submit" radius="xl">
+              Log in with Email
+            </Button>
+            <GoogleButton radius="xl">Google</GoogleButton>
           </Stack>
 
           <Group justify="space-between" mt="xl">
@@ -81,11 +89,8 @@ export default function Page(props: PaperProps) {
               size="xs"
               onClick={() => router.push("/signup")}
             >
-              Don&apos;t have an account? Register
+              Don&apos;t have an account? Sign-up Here
             </Anchor>
-            <Button type="submit" radius="xl">
-              Login
-            </Button>
           </Group>
         </form>
       </Paper>
