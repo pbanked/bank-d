@@ -23,7 +23,7 @@ export default function Page(props: PaperProps) {
     initialValues: { email: "", password: "", terms: true },
     validate: {
       email: (v: string) => (/^\S+@\S+$/.test(v) ? null : "Invalid email"),
-      password: (v: string | any[]) =>
+      password: (v: string) =>
         v.length <= 6 ? "Password should include at least 6 characters" : null,
     },
   });
@@ -81,7 +81,7 @@ export default function Page(props: PaperProps) {
               size="xs"
               onClick={() => router.push("/signup")}
             >
-              Don't have an account? Register
+              Don&apos;t have an account? Register
             </Anchor>
             <Button type="submit" radius="xl">
               Login
