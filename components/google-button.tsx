@@ -1,4 +1,9 @@
 import { Button, ButtonProps } from "@mantine/core";
+import { MouseEventHandler } from "react";
+
+interface GoogleButtonProps extends ButtonProps {
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+}
 
 function GoogleLogo() {
   return (
@@ -16,7 +21,7 @@ function GoogleLogo() {
 export function GoogleButton({
   children = "Sign in with Google",
   ...props
-}: ButtonProps) {
+}: GoogleButtonProps) {
   return (
     <Button
       aria-label="Sign in with Google"
