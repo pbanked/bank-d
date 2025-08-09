@@ -96,13 +96,13 @@ export default function Page() {
 
     return (
     <Center mih="100vh">
-      <Paper maw={560} w="100%" radius="md" p="5vw" withBorder bg-shadow>
-        <Text size="50px" fw={500}>
+      <Paper maw={560} w="100%" radius="md" p="5vw" m="5vw" withBorder bg-shadow>
+        <Text size="50px" fw={500} mb="10">
           Sign Up
         </Text>
         <form onSubmit={form.onSubmit(handleSubmit)}>
           <Stack>
-            <Group>
+            <Group grow>
               <TextInput
                 required
                 label="First Name"
@@ -160,21 +160,29 @@ export default function Page() {
 
         <Divider label="OR" labelPosition="center" my="md" />
 
-        <GoogleButton onClick={(event) => {
-            event.preventDefault();
-            void handleGoogleLogin();}} />
+        
 
-        <Group justify="space-between">
+          <Stack w="100%" align="center" gap="md">
+            <GoogleButton
+              radius="xl"
+              size="sm"
+              fullWidth
+              onClick={(event) => {
+                event.preventDefault();
+                void handleGoogleLogin();
+              }}
+            />
+
             <Anchor
-            component="button"
-            type="button"
-            c="dimmed"
-            size="xs"
-            onClick={() => router.push("/login")}
+              component="button"
+              type="button"
+              c="dimmed"
+              size="xs"
+              onClick={() => router.push("/login")}
             >
-            Have an account? Login here
+              Have an account? Login here
           </Anchor>
-        </Group>
+        </Stack>
       </Paper>
     </Center>
   );
