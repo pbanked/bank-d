@@ -3,7 +3,14 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@mantine/core/styles.css";
 import { Notifications } from "@mantine/notifications";
-import { MantineProvider } from "@mantine/core";
+import { Providers } from "./provider";
+import { DM_Sans } from "next/font/google";
+
+export const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400"], 
+  variable: "--font-dm-sans",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,17 +35,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${dmSans.variable} antialiased`}
       >
-        <MantineProvider
-          defaultColorScheme="light"
-          theme={{
-            primaryColor: "blue",
-          }}
-        >
+        <Providers>
           <Notifications />
           {children}
-        </MantineProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -96,8 +96,8 @@ export default function Page() {
 
     return (
     <Center mih="100vh">
-      <Paper maw={560} w="100%" radius="md" p="5vw" m="5vw" withBorder bg-shadow>
-        <Text size="50px" fw={500} mb="10">
+      <Paper maw={560} w="100%" radius="md" p="5vw" m="5vw" withBorder>
+        <Text size="50px" fw={500} mb="37">
           Sign Up
         </Text>
         <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -152,7 +152,7 @@ export default function Page() {
               error={form.errors.terms}
             />
 
-            <Button type="submit" radius="xl" mt="md">
+            <Button variant="filled" type="submit" radius="xl" mt="md">
               Sign Up
             </Button>
           </Stack>

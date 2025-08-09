@@ -82,13 +82,14 @@ export default function Page() {
             <GoogleButton radius="xl">Google</GoogleButton>
           </Stack>
 
-          <Group justify="space-between" mt="xl">
+          <Group justify="center" mt="xl">
             <Anchor
               component="button"
               type="button"
               c="dimmed"
               size="xs"
               onClick={() => router.push("/signup")}
+              sx={{ fontStyle: 'italic' }}
             >
               Don&apos;t have an account? Sign-up Here
             </Anchor>
