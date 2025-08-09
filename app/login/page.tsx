@@ -89,7 +89,7 @@ export default function Page() {
               c="dimmed"
               size="xs"
               onClick={() => router.push("/signup")}
-              sx={{ fontStyle: 'italic' }}
+              
             >
               Don&apos;t have an account? Sign-up Here
             </Anchor>
