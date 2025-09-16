@@ -1,12 +1,10 @@
 "use client";
-
 import { Text, Title, Button } from "@mantine/core";
 import { IconTools } from "@tabler/icons-react";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100 px-4">
+  <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-blue-100 px-4">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center border border-gray-200">
         <div className="flex justify-center mb-4">
           <IconTools size={48} stroke={1.5} className="text-blue-600" />
@@ -38,5 +36,4 @@ export default function Home() {
         </Button>
       </div>
     </main>
-  );
 }
