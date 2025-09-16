@@ -1,7 +1,8 @@
 "use client";
 
 import { GoogleButton } from "@/components/google-button";
-import { userLogin } from "@/functions/user-login";
+import { userLogin } from "@/utils/auth/user-login";
+
 import {
   Anchor,
   Button,
@@ -81,13 +82,14 @@ export default function Page() {
             <GoogleButton radius="xl">Google</GoogleButton>
           </Stack>
 
-          <Group justify="space-between" mt="xl">
+          <Group justify="center" mt="xl">
             <Anchor
               component="button"
               type="button"
               c="dimmed"
               size="xs"
               onClick={() => router.push("/signup")}
+              
             >
               Don&apos;t have an account? Sign-up Here
             </Anchor>
