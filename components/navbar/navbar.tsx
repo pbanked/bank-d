@@ -2,14 +2,21 @@
 
 import { useState } from "react";
 import {
+  IconBook,
+  IconCalculator,
   IconCalendarStats,
+  IconDashboard,
   IconDeviceDesktopAnalytics,
   IconFingerprint,
   IconGauge,
+  IconGridPattern,
   IconHome2,
+  IconLayout,
   IconLogout,
+  IconPhone,
   IconSettings,
   IconSwitchHorizontal,
+  IconTargetArrow,
   IconUser,
 } from "@tabler/icons-react";
 import { Center, Stack, Tooltip, UnstyledButton } from "@mantine/core";
@@ -38,10 +45,12 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
 }
 
 const mockdata = [
-  { icon: IconHome2, label: "Home", path: "/home" },
-  { icon: IconGauge, label: "Dashboard", path: "/dashboard" },
-  { icon: IconDeviceDesktopAnalytics, label: "Analytics", path: "/analytics" },
-  { icon: IconSettings, label: "Settings", path: "/settings" },
+  { icon: IconLayout, label: "Dashboard", path: "/dashboard" },
+  { icon: IconPhone, label: "Calls", path: "/call" },
+  { icon: IconCalculator, label: "Calendar", path: "/calendar" },
+  { icon: IconBook, label: "Contact", path: "/contact" },
+  { icon: IconUser, label: "User", path: "/user" },
+  { icon: IconTargetArrow, label: "Analytics", path: "/analytics" },
 ];
 
 export function Navbar() {
@@ -58,8 +67,6 @@ export function Navbar() {
 
   return (
     <nav className={classes.navbar}>
-      <Center></Center>
-
       <div className={classes.navbarMain}>
         <Stack justify="center" gap={0}>
           {links}
@@ -67,7 +74,7 @@ export function Navbar() {
       </div>
 
       <Stack justify="center" gap={0}>
-        <NavbarLink icon={IconLogout} label="Logout" />
+        <NavbarLink icon={IconSettings} label="Settings" onClick={() => router.push('/settings')} />
       </Stack>
     </nav>
   );
