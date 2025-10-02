@@ -13,10 +13,14 @@ function GoogleLogo() {
   );
 }
 
+interface GoogleButtonProps extends ButtonProps {
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
 export function GoogleButton({
   children = "Sign in with Google",
   ...props
-}: ButtonProps) {
+}: GoogleButtonProps) {
   return (
     <Button
       aria-label="Sign in with Google"

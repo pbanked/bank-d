@@ -21,7 +21,7 @@ import { notifications } from "@mantine/notifications";
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
 import createUser from "@/utils/auth/create-user";
-import { signInWithOAuth } from "@/utils/auth/oauth-signup";
+import signInWithOAuth  from "@/utils/auth/oauth-signup";
 
 export default function Page() {
     const router = useRouter();
@@ -167,7 +167,7 @@ export default function Page() {
               radius="xl"
               size="sm"
               fullWidth
-              onClick={(event) => {
+              onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
                 event.preventDefault();
                 void handleGoogleLogin();
               }}
