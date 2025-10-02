@@ -59,7 +59,7 @@ export default function Page() {
 
     return (
     <Center mih="100vh">
-      <Paper miw={375} mih={400} radius="lg" p={{ base: "md", sm: "lg", md: "xl" }} m={{ base: "md", sm: "lg", md: "xl" }}  shadow="md" withBorder>
+      <Paper miw={375} mih={400} radius="lg" p="3vw" m="3vw" shadow="md" withBorder>
         <Text size="28px" fw={600} mt="40" mb="30">
           Reset Password
         </Text>

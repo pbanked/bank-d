@@ -16,7 +16,6 @@ export async function userLogin(
     console.log("Login error:", error.message);
     return error.message;
   }
-  console.log("User Login:", data.user);
   router.push(`/${data.user?.id}/dashboard`);
   return null;
 }
