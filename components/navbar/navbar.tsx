@@ -1,25 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import {
   IconBook,
   IconCalculator,
-  IconCalendarStats,
-  IconDashboard,
-  IconDeviceDesktopAnalytics,
-  IconFingerprint,
-  IconGauge,
-  IconGridPattern,
   IconHome2,
   IconLayout,
-  IconLogout,
   IconPhone,
   IconSettings,
-  IconSwitchHorizontal,
   IconTargetArrow,
   IconUser,
 } from "@tabler/icons-react";
-import { Center, Stack, Tooltip, UnstyledButton } from "@mantine/core";
+import { Stack, Tooltip, UnstyledButton } from "@mantine/core";
 import classes from "./navbar.module.css";
 import { usePathname, useRouter } from "next/navigation";
 
