@@ -5,25 +5,29 @@ import Header from "@/components/header/header";
 import { Navbar } from "@/components/navbar/navbar";
 import CallsContactMade from "@/components/stats/calls/calls-contact-made";
 import CallsConversionRates from "@/components/stats/call-conversion/calls-conversion-rates";
+import CallOutcomePie from "@/components/stats/call-outcome-chart/call-outcome-pie";
+import { Heatmap } from "@mantine/charts";
+import HeatmapTime from "@/components/stats/heatmap-stats/heatmap-time";
+import HistogramCalls from "@/components/stats/histogram-call-duration/histogram-call";
 
 export default function Dashboard() {
   return (
     <div style={{ display: "flex", minHeight: "100vh", background: "#f5f7fb" }}>
       <Navbar />
-      <div style={{ flex: 1, marginLeft: 80,padding: "2rem", width: "100%" }}>
+      <div style={{ flex: 1, marginLeft: 80, padding: "2rem", width: "100%" }}>
         <Header headerTitle="Dashboard" />
 
-        <Grid mt="xl" gutter="xl" align="stretch">
+        <Grid mt="xl" gutter="lg" align="stretch">
           <Grid.Col span={{ base: 12, md: 4 }}>
-            <Paper p="lg" radius="md" shadow="sm">
-              <CallsContactMade/>
+            <Paper p="lg" radius="md" shadow="sm" h={"100%"}>
+              <CallsContactMade />
               {/* INSERT CALL COMPONENT */}
             </Paper>
           </Grid.Col>
 
           <Grid.Col span={{ base: 12, md: 4 }}>
-            <Paper p="lg" radius="md" shadow="sm">
-              <CallsConversionRates/>
+            <Paper p="lg" radius="md" shadow="sm" h={"100%"}>
+              <CallsConversionRates />
               {/* INSERT CONVERSION COMPONENT */}
             </Paper>
           </Grid.Col>
@@ -59,7 +63,8 @@ export default function Dashboard() {
                 Productivity
               </Text>
               {/* INSERT PRODUCTIVITY COMPONENT HERE */}
-              [Heatmap / Histogram Here]
+
+              <HeatmapTime />
             </Paper>
           </Grid.Col>
         </Grid>
@@ -67,12 +72,16 @@ export default function Dashboard() {
         {/* Bottom charts */}
         <Grid mt="xl" gutter="xl">
           <Grid.Col span={{ base: 12, md: 8 }}>
-            <Paper p="lg" radius="md" shadow="sm" style={{ height: 400 }}>
+            <Paper p="lg" radius="md" shadow="sm" style={{ height: 500 }}>
+              <CallOutcomePie />
+            </Paper>
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 4 }}>
+            <Paper p="lg" radius="md" shadow="sm" style={{ height: 500 }}>
               <Text fw={600} mb="sm" c="dimmed">
-                Call outcomes
+                Productivity
               </Text>
-              {/* INSERT PIE CHART HERE */}
-              [Pie Chart Here]
+              <HistogramCalls />
             </Paper>
           </Grid.Col>
         </Grid>
