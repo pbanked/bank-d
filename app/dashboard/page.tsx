@@ -3,6 +3,8 @@
 import { Grid, Paper, Text, Button, Group } from "@mantine/core";
 import Header from "@/components/header/header";
 import { Navbar } from "@/components/navbar/navbar";
+import CallsContactMade from "@/components/stats/calls/calls-contact-made";
+import CallsConversionRates from "@/components/stats/call-conversion/calls-conversion-rates";
 
 export default function Dashboard() {
   return (
@@ -14,14 +16,14 @@ export default function Dashboard() {
         <Grid mt="xl" gutter="xl" align="stretch">
           <Grid.Col span={{ base: 12, md: 4 }}>
             <Paper p="lg" radius="md" shadow="sm">
-              call
+              <CallsContactMade/>
               {/* INSERT CALL COMPONENT */}
             </Paper>
           </Grid.Col>
 
           <Grid.Col span={{ base: 12, md: 4 }}>
             <Paper p="lg" radius="md" shadow="sm">
-              conversion
+              <CallsConversionRates/>
               {/* INSERT CONVERSION COMPONENT */}
             </Paper>
           </Grid.Col>
