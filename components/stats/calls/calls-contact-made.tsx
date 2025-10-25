@@ -26,7 +26,7 @@ export default function CallsContactMade({
             tempCalls.totalCalls.toString()}
         </Text>
       </div>
-
+      <br/>
       <div>
         <Text c="dimmed" tt="uppercase" fw={700} fz="xs">
           contacts made (day)

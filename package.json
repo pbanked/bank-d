@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@mantine/carousel": "^8.2.2",
-    "@mantine/charts": "^8.2.2",
+    "@mantine/charts": "^8.3.5",
     "@mantine/code-highlight": "^8.2.2",
     "@mantine/core": "^8.2.2",
     "@mantine/dates": "^8.2.2",
@@ -35,7 +35,7 @@
     "next": "15.4.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "recharts": "^3.1.0"
+    "recharts": "^3.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
