@@ -60,7 +60,7 @@ export default function Page() {
     return (
     <Center mih="100vh">
       <Paper miw={375} mih={400} radius="lg" p="3vw" m="3vw" shadow="md" withBorder>
-        <Text size="28px" fw={600} mt="40" mb="30">
+        <Text size="28px" fw={500} mt="40" mb="30">
           Reset Password
         </Text>
         <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -69,7 +69,7 @@ export default function Page() {
               required
               label="Enter new password"
               withAsterisk
-              size="md"
+              size="sm"
               placeholder=""
               {...form.getInputProps("password")}
             />
@@ -77,12 +77,12 @@ export default function Page() {
               required
               label="Confirm new password"
               withAsterisk
-              size="md"
+              size="sm"
               placeholder=""
               {...form.getInputProps("confirmPassword")}
             />
 
-            <Button variant="filled" type="submit" radius="sm" size="md" mb="md">
+            <Button variant="filled" type="submit" radius="xl" size="md" mb="md">
                 confirm
             </Button>
 

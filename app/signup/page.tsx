@@ -47,7 +47,6 @@ export default function Page() {
               if (values.confirmPassword !== values.password) {
                 errors.confirmPassword = "Passwords do not match";
               }
-        
               if (!values.terms) {
                 errors.terms = "You must accept the terms and conditions";
               }
@@ -167,10 +166,7 @@ export default function Page() {
               radius="xl"
               size="sm"
               fullWidth
-              onClick={(event: React.MouseEvent<HTMLButtonElement>) => {
-                event.preventDefault();
-                void handleGoogleLogin();
-              }}
+              onClick={() => handleGoogleLogin()}
             />
 
             <Anchor

@@ -54,7 +54,7 @@ export default function Page() {
     return (
     <Center mih="100vh">
       <Paper miw={400} mih={375} radius="lg" p="3vw" m="3vw" shadow="md" withBorder>
-        <Text size="28px" fw={600} mt="40" mb="50">
+        <Text size="28px" fw={500} mt="40" mb="50">
           Forgot your password
         </Text>
         <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -69,7 +69,7 @@ export default function Page() {
               {...form.getInputProps("email")}
             />
 
-            <Button variant="filled" type="submit" radius="sm" size="md" mb="md">
+            <Button variant="filled" type="submit" radius="xl" size="md" mb="md">
               send link
             </Button>
             <Anchor
