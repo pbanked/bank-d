@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from "@mantine/core";
+import { Button } from "@mantine/core";
 
 function GoogleLogo() {
   return (
@@ -16,7 +16,7 @@ function GoogleLogo() {
 export function GoogleButton({
   children = "Sign in with Google",
   ...props
-}: ButtonProps) {
+}) {
   return (
     <Button
       aria-label="Sign in with Google"
