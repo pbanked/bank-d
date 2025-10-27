@@ -6,7 +6,6 @@ import '@mantine/charts/styles.css';
 import { Notifications } from "@mantine/notifications";
 import { Providers } from "./provider";
 import { DM_Sans } from "next/font/google";
-import { Navbar } from "@/components/navbar/navbar";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
