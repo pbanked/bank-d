@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-import "./globals.css";
+import "../globals.css";
 import "@mantine/core/styles.css";
 import '@mantine/charts/styles.css';
 import { Notifications } from "@mantine/notifications";
-import { Providers } from "./provider";
+import { Providers } from "../provider";
 import { DM_Sans } from "next/font/google";
 import { Navbar } from "@/components/navbar/navbar";
 
@@ -32,6 +32,7 @@ export default function RootLayout({
       >
         <Providers>
           <Notifications />
+          <Navbar/>
           {children}
         </Providers>
       </body>

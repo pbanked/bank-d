@@ -34,14 +34,14 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
     </Tooltip>
   );
 }
-
+// WE HAVE TO UPDATE THIS SO THAT IT TAKES THE USER ID // 
 const mockdata = [
-  { icon: IconLayout, label: "Dashboard", path: "/dashboard" },
-  { icon: IconPhone, label: "Calls", path: "/call" },
-  { icon: IconCalculator, label: "Calendar", path: "/calendar" },
-  { icon: IconBook, label: "Contact", path: "/contacts" },
-  { icon: IconUser, label: "User", path: "/people" },
-  { icon: IconTargetArrow, label: "Analytics", path: "/analytics" },
+  { icon: IconLayout, label: "Dashboard", path: `/${"user"}/dashboard` },
+  { icon: IconPhone, label: "Calls", path: `/${"user"}/call`},
+  { icon: IconCalculator, label: "Calendar", path: `/${"user"}/calendar` },
+  { icon: IconBook, label: "Contact", path: `/${"user"}/contacts` },
+  { icon: IconUser, label: "User", path: `/${"user"}/people` },
+  { icon: IconTargetArrow, label: "Analytics", path: `/${"user"}/analytics` },
 ];
 
 export function Navbar() {
@@ -65,7 +65,7 @@ export function Navbar() {
       </div>
 
       <Stack justify="center" gap={0}>
-        <NavbarLink icon={IconSettings} label="Settings" onClick={() => router.push('/settings')} />
+        <NavbarLink icon={IconSettings} label="Settings" onClick={() => router.push('/account')} />
       </Stack>
     </nav>
   );
