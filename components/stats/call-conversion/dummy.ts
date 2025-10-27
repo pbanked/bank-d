@@ -14,7 +14,7 @@ export const data = [
   {
     date: 'Mar 24',
     Apples: 3322,
-    Oranges: 986,
+    Oranges: 2000,
     Tomatoes: 1821,
   },
   {

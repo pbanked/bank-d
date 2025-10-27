@@ -6,7 +6,6 @@ import { Navbar } from "@/components/navbar/navbar";
 import CallsContactMade from "@/components/stats/calls/calls-contact-made";
 import CallsConversionRates from "@/components/stats/call-conversion/calls-conversion-rates";
 import CallOutcomePie from "@/components/stats/call-outcome-chart/call-outcome-pie";
-import { Heatmap } from "@mantine/charts";
 import HeatmapTime from "@/components/stats/heatmap-stats/heatmap-time";
 import HistogramCalls from "@/components/stats/histogram-call-duration/histogram-call";
 
