@@ -15,7 +15,7 @@ const data = [
   { name: "Other", value: 10, color: "orange" },
 ];
 
-export default function CallsOutcomes(callOutcomes:{callOutcomes: CallOutcomeType}) {
+export default function CallsOutcomes(callOutcomes:{callOutcomes?: CallOutcomeType}) {
   return (
     <div>
       <Text c="dimmed" tt="uppercase" fw={700} fz="xs">

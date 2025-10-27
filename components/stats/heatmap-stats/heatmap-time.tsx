@@ -2,12 +2,12 @@ import { ResponsiveHeatMap } from "@nivo/heatmap";
 import { heatmapData } from "./dummy";
 
 type HeatmapData = {
-  id: string;
-  data: { x: string; y: string };
+  id?: string;
+  data?: { x?: string; y?: string };
 };
 
 export default function ProductivityHeatmap(heatmapProdData: {
-  heatmapProdData: HeatmapData;
+  heatmapProdData?: HeatmapData;
 }) {
   return (
     <div style={{ width: "100%", height: "100%" }}>

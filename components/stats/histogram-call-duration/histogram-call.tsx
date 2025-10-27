@@ -7,7 +7,7 @@ type HistogramData = {
 };
 
 export default function HistogramCalls(histogramData: {
-  histogramData: HistogramData;
+  histogramData?: HistogramData;
 }) {
   return (
     <Center h={"100%"}>
