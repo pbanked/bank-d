@@ -39,8 +39,8 @@ const mockdata = [
   { icon: IconLayout, label: "Dashboard", path: "/dashboard" },
   { icon: IconPhone, label: "Calls", path: "/call" },
   { icon: IconCalculator, label: "Calendar", path: "/calendar" },
-  { icon: IconBook, label: "Contact", path: "/contact" },
-  { icon: IconUser, label: "User", path: "/user" },
+  { icon: IconBook, label: "Contact", path: "/contacts" },
+  { icon: IconUser, label: "User", path: "/people" },
   { icon: IconTargetArrow, label: "Analytics", path: "/analytics" },
 ];
 
