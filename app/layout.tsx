@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import "@mantine/core/styles.css";
+import '@mantine/charts/styles.css';
 import { Notifications } from "@mantine/notifications";
 import { Providers } from "./provider";
 import { DM_Sans } from "next/font/google";
