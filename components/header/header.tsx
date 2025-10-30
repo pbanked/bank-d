@@ -1,3 +1,4 @@
+import { userLogOut } from "@/functions/log-out-user";
 import {
   Avatar,
   Box,
@@ -8,6 +9,7 @@ import {
 } from "@mantine/core";
 import {
   IconBell,
+  IconLogout2,
   IconMessageCircle,
   IconSettings,
 } from "@tabler/icons-react";
@@ -39,6 +41,9 @@ export default function Header({ headerTitle }: { headerTitle: string }) {
               <Menu.Label>Visual</Menu.Label>
               <Menu.Item>
                 <Switch label="Light/Dark mode" />
+              </Menu.Item>
+              <Menu.Item leftSection={<IconLogout2 stroke={1} />} onClick={() => userLogOut(router)}>
+                Sign out
               </Menu.Item>
             </Menu.Dropdown>
           </Menu>
