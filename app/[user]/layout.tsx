@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "../globals.css";
 import "@mantine/core/styles.css";
-import '@mantine/charts/styles.css';
+import "@mantine/charts/styles.css";
 import { Notifications } from "@mantine/notifications";
 import { Providers } from "../provider";
 import { DM_Sans } from "next/font/google";
@@ -10,10 +10,9 @@ import { Navbar } from "@/components/navbar/navbar";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400"], 
+  weight: ["400"],
   variable: "--font-dm-sans",
 });
-
 
 export const metadata: Metadata = {
   title: "Bankd",
@@ -24,16 +23,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="en">
-      <body
-      className={`${dmSans.variable} antialiased`}
-      >
+      <body className={`${dmSans.variable} antialiased`}>
         <Providers>
           <Notifications />
-          <Navbar/>
-          {children}
+          <div
+            style={{
+              display: "flex",
+              minHeight: "100vh",
+              background: "#f5f7fb",
+            }}
+          >
+            <Navbar />
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

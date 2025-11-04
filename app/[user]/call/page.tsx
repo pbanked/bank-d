@@ -64,8 +64,7 @@ export default function Calls() {
   const progress = Math.round((completed / contacts.length) * 100);
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", background: "#f5f7fb" }}>
-      <Navbar />
+   
       <div style={{ flex: 1, marginLeft: 80, padding: "2rem", width: "100%" }}>
         <Header headerTitle={"Calls"} />
         <Grid mt="xl" gutter="lg" align="stretch">
@@ -205,6 +204,5 @@ export default function Calls() {
           </Grid.Col>
         </Grid>
       </div>
-    </div>
   );
 }
