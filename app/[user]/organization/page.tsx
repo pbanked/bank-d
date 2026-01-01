@@ -133,7 +133,7 @@ export default function Organization() {
     }
 
     return (
-      <Paper withBorder radius="md" shadow="sm" overflow="hidden">
+      <Paper withBorder radius="md" shadow="sm">
         <Table verticalSpacing="sm" highlightOnHover striped>
           <Table.Thead bg="gray.0">
             <Table.Tr>

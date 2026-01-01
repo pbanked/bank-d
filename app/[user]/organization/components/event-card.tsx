@@ -1,4 +1,3 @@
-// app/[user]/organization/components/event-card.tsx
 'use client';
 import React from 'react';
 import { Paper, Group, Badge, ActionIcon, Text, Button, Tooltip } from '@mantine/core';
@@ -12,15 +11,14 @@ export interface OrganizationEvent {
   location: string;
   status: 'Published' | 'Draft';
   attendees: number;
-  contacts: string[]; // List of Contact IDs or Names
+  contacts: string[];
   isRepeating: boolean;
-  repeatingDays: string[]; // e.g. ['Mon', 'Wed']
+  repeatingDays: string[]; 
 }
 
 export default function EventCard({ event }: { event: OrganizationEvent }) {
   const isPast = event.endDate < new Date();
 
-  // Format date range: "Feb 10 • 2:00 PM - 4:00 PM"
   const dateStr = event.startDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
   const timeStart = event.startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   const timeEnd = event.endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
