@@ -12,7 +12,7 @@ import {
 } from "@tabler/icons-react";
 import { Stack, Tooltip, UnstyledButton } from "@mantine/core";
 import classes from "./navbar.module.css";
-import { usePathname, useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
 interface NavbarLinkProps {
   icon: typeof IconHome2;
@@ -34,20 +34,27 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
     </Tooltip>
   );
 }
-// WE HAVE TO UPDATE THIS SO THAT IT TAKES THE USER ID // 
-const mockdata = [
-  { icon: IconLayout, label: "Dashboard", path: `/${"user"}/dashboard` },
-  { icon: IconPhone, label: "Calls", path: `/${"user"}/call`},
-  { icon: IconCalculator, label: "Calendar", path: `/${"user"}/calendar` },
-  { icon: IconBook, label: "Contact", path: `/${"user"}/contacts` },
-  { icon: IconUser, label: "User", path: `/${"user"}/people` },
-  { icon: IconTargetArrow, label: "Analytics", path: `/${"user"}/analytics` },
-];
 
 export function Navbar() {
   const activePath = usePathname();
-  const router = useRouter()
-  const links = mockdata.map((link) => (
+  const router = useRouter();
+  
+  const params = useParams();
+
+  const userId = params.user as string; 
+
+  const navLinksData = [
+    { icon: IconLayout, label: "Dashboard", path: `/${userId}/dashboard` },
+    { icon: IconPhone, label: "Calls", path: `/${userId}/call`},
+    { icon: IconCalculator, label: "Calendar", path: `/${userId}/calendar` },
+    { icon: IconBook, label: "Contact", path: `/${userId}/contacts` },
+    { icon: IconUser, label: "User", path: `/${userId}/people` },
+    { icon: IconTargetArrow, label: "Analytics", path: `/${userId}/analytics` },
+    { icon: IconTargetArrow, label: "Organization", path: `/${userId}/organization` },
+
+  ];
+
+  const links = navLinksData.map((link) => (
     <NavbarLink
       {...link}
       key={link.label}

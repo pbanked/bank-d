@@ -70,8 +70,7 @@ export default function ContactsPage() {
   );
 
   return (
-    // UPDATED: Added `pl={100}` to offset the sidebar width. 
-    // Adjust '100' to match the actual width of your blue sidebar.
+    
     <Container fluid py="xl" pr="lg" pl={100}>
       <Header headerTitle="Contact" />
       

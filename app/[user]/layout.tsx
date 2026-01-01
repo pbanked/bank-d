@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-
 import "../globals.css";
 import "@mantine/core/styles.css";
 import "@mantine/charts/styles.css";
@@ -18,6 +17,7 @@ export const metadata: Metadata = {
   title: "Bankd",
   description: "Banking app",
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,7 +36,17 @@ export default function RootLayout({
             }}
           >
             <Navbar />
-            {children}
+            
+            <main
+              style={{
+                flex: 1,          
+                display: "flex",  
+                flexDirection: "column",
+                minWidth: 0,    
+              }}
+            >
+              {children}
+            </main>
           </div>
         </Providers>
       </body>
